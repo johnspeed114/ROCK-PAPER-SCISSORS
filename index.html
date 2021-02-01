@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Rock Paper Scissors</title>
+  <link rel = 'stylesheet' href = 'style.css'>
+
+</head>
+<body>
+    <h1>My Rock Paper Scissors Game of Thrones</h1>
+
+<script>
+    const computerPlay = () => {
+        const pcNumber = Math.floor(Math.random()* 3);
+        if (pcNumber === 0) return 'Rock';
+        else if (pcNumber === 1) return 'Paper';
+        else return 'Scissors';
+    }
+
+    const gameFunction = (playerSelection, computerSelection) => {
+        if (playerSelection === 'Paper') {
+            if (computerSelection === 'Scissors') return "You Lose! Scissors beat Paper!";
+            else if (computerSelection === 'Paper') return "It's A Tie! You live to fight Another Day.";
+            else return "You Win! Paper beats Rock!";
+        }
+        else if (playerSelection === 'Scissors') {
+            if (computerSelection === 'Rock') return "You Lose! Rock beats Scissors!";
+            else if (computerSelection === 'Scissors') return "It's A Tie! You live to fight Another Day.";
+            else return "You Win! Scissors beat Paper!";
+        }
+
+        else {
+            if (computerSelection === 'Paper') return "You Lose! Paper beats Rock!";
+            else if (computerSelection === 'Rock') return "It's A Tie! You live to fight Another Day.";
+            else return "You Win! Rock beats Scissors!";
+        }
+    }
+    //tomorrow, add buttons and attach them to your computer value gen and user input creating the playerSelection 
+
+
+</script>
+
+
+</body>
+</html>
