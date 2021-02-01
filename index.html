@@ -12,12 +12,24 @@
     <button id = "buttonPaper"> Paper </button>
     <button id = "buttonScissors"> Scissors </button>
     
-    <div>
-        <ul>
-            <li>Wins</li>
-            <li>Ties</li>
-            <li>Losses</li>
-        </ul>
+    <div class = "results">
+        <div id = "classWins" class = "result"> 
+                <span>Wins</span>
+                <span id = "winsId" class = "tally">0</span>  
+            
+        </div>
+
+        <div class = "result"> 
+            <span id = "ties">Ties</span>
+            <span id = "tiesId" class = "tally">0</span>
+        
+        </div>
+        <div class = "result"> 
+            <span id = "losses">Losses</span>
+            <span id = "lossesId" class = "tally">0</span>
+        
+        </div>
+
     </div>
 
 <script>
@@ -101,6 +113,7 @@
         console.log(wins, losses, ties);
     })
 
+    
     
        
 

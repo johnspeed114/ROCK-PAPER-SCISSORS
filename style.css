@@ -1,0 +1,41 @@
+html {
+    font-style: initial;
+    background: url('./background.jpg') bottom center;
+    background-size: cover;
+    }
+    
+    .results {
+        display: flex;
+        flex: 1;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .result {
+        border: .4rem thin black;
+        border-radius: .5rem;
+        margin: 1rem;
+        font-size: 1.5rem;
+        padding: 1rem .5rem;
+        width: 10rem;
+        text-align: center;
+        color: white;
+        background: rgba(0,0,0,0.4);
+        text-shadow: 0 0 .5rem black;
+    }
+
+    #winsId{
+        color: green;
+        display: block;
+    }
+
+    #tiesId {
+        color: rgb(68, 114, 173);
+        display: block; 
+    }
+
+    #lossesId {
+        color: red;
+        display: block;
+    }
