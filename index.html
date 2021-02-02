@@ -7,10 +7,10 @@
 
 </head>
 <body>
-    <h1>My Rock Paper Scissors Game of Thrones</h1>
-    <button id = "buttonRock"> Rock </button>
-    <button id = "buttonPaper"> Paper </button>
-    <button id = "buttonScissors"> Scissors </button>
+    <h1>Rock Paper Scissors of GameStonks!</h1>
+    <button id = "buttonRock" class = "button"> Rock </button>
+    <button id = "buttonPaper" class = "button"> Paper </button>
+    <button id = "buttonScissors" class = "button"> Scissors </button>
     
     <div class = "results">
         <div id = "classWins" class = "result"> 
@@ -63,6 +63,9 @@
     let wins = 0
     let losses = 0
     let ties = 0
+    const winsIDvar = document.getElementById("winsId");
+    const lossesIDvar = document.getElementById("lossesId");
+    const tiesIDvar = document.getElementById("tiesId"); 
 
     buttonRock.addEventListener('click', function() {
         let playerSelection = "rock";
@@ -70,50 +73,94 @@
         let results = gameFunction(playerSelection, computerSelection);
         if (results.includes("You Win!")) {
             wins += 1;
+            winsIDvar.textContent = wins;
+            if (wins >= 5) {
+                alert("The People of the Internet have beaten WallStreet! Gamestonk to the Moon!!!!")
+                resetGame();
+            }
         }
         else if (results.includes("You Lose!")) {
             losses += 1;
+            lossesIDvar.textContent = losses;
+            if (losses >= 5) {
+                alert("Shit! Hedge Funds beat us to it! From the ashes, WE RISE UP!!!")
+                resetGame();
+            }
+
         }
 
         else {
             ties += 1;
+            tiesIDvar.textContent = ties;
         }
         console.log(wins, losses, ties);
-    })
+    });
     buttonPaper.addEventListener('click', function() {
         let playerSelection = "paper";
         let computerSelection = computerPlay();
         let results = gameFunction(playerSelection, computerSelection);
         if (results.includes("You Win!")) {
             wins += 1;
+            winsIDvar.textContent = wins;
+            if (wins >= 5) {
+                alert("The People of the Internet have beaten WallStreet! Gamestonk to the Moon!!!!");
+                resetGame();
+            }
         }
         else if (results.includes("You Lose!")) {
             losses += 1;
+            lossesIDvar.textContent = losses;
+            if (losses >= 5) {
+                alert("Shit! Hedge Funds beat us to it! From the ashes, WE RISE UP!!!")
+                resetGame();
+            }
         }
 
         else {
             ties += 1;
+            tiesIDvar.textContent = ties;
         }
         console.log(wins, losses, ties);
-    })
+    });
+
     buttonScissors.addEventListener('click', function() {
         let playerSelection = "scissors";
         let computerSelection = computerPlay();
         let results = gameFunction(playerSelection, computerSelection);
         if (results.includes("You Win!")) {
             wins += 1;
+            winsIDvar.textContent = wins;
+            if (wins >= 5) {
+                alert("The People of the Internet have beaten WallStreet! Gamestonk to the Moon!!!!")
+                resetGame();
+                
+            }
         }
+        
         else if (results.includes("You Lose!")) {
             losses += 1;
+            lossesIDvar.textContent = losses;
+            if (losses >= 5) {
+                alert("Shit! Hedge Funds beat us to it! From the ashes, WE RISE UP!!!")
+                resetGame();    
+            }
         }
 
         else {
             ties += 1;
+            tiesIDvar.textContent = ties;
         }
         console.log(wins, losses, ties);
-    })
+    });
 
-    
+    const resetGame = () => {
+        wins = 0;
+        ties = 0;
+        losses = 0;
+        winsIDvar.textContent = wins;
+        lossesIDvar.textContent = losses;
+        tiesIDvar.textContent = ties;
+    }
     
        
 
